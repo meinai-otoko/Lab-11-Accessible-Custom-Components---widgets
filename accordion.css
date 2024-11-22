@@ -1,0 +1,67 @@
+/* Base styles */
+.container {
+    width: 80%;
+    max-width: 600px;
+    margin: 50px auto;
+  }
+  
+  /* Accordion button styling */
+  button.accordion {
+    width: 100%;
+    background-color: whitesmoke;
+    border: none;
+    outline: none;
+    text-align: left;
+    padding: 15px 20px;
+    font-size: 18px;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.2s linear;
+    position: relative; /* Added for focus styling */
+  }
+  
+  /* Added focus styling for keyboard navigation */
+  button.accordion:focus {
+    outline: 2px solid #4A90E2;
+    outline-offset: -2px;
+    box-shadow: 0 0 3px 2px rgba(74, 144, 226, 0.3);
+  }
+  
+  /* Icon styling */
+  button.accordion:after {
+    font-family: FontAwesome;
+    content: "\f150";
+    font-size: 18px;
+    float: right;
+  }
+  
+  button.accordion.is-open:after {
+    content: "\f151";
+  }
+  
+  /* Hover and open states */
+  button.accordion:hover,
+  button.accordion.is-open {
+    background-color: #ddd;
+  }
+  
+  /* Content panel styling */
+  .accordion-content {
+    background-color: white;
+    border-left: 1px solid whitesmoke;
+    border-right: 1px solid whitesmoke;
+    padding: 0 20px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+  }
+  
+  /* Added styles for when content is visible */
+  .accordion-content[aria-hidden="false"] {
+    border-bottom: 1px solid whitesmoke;
+  }
+  
+  /* Added spacing between accordion items */
+  .accordion-group > * + * {
+    margin-top: 1px;
+  }
